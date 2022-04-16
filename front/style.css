@@ -15,8 +15,20 @@ header {
 
 .logo {
   margin-right: auto;
+  width: 95px;
+  height: 122px;
+  background-image: url("images/logobranco1.png");
+    transition: all 0.3s ease 0s;
+
 }
 
+.logo:hover {
+
+
+  background: url("images/logolaranja1.png") no-repeat;
+  transition: all 0.3s ease 0s;
+
+}
 
 .nav__links {
   list-style: none;
@@ -54,12 +66,13 @@ header {
   color: orange;
 }
 
-.nav__links li  ul{
-position:absolute;
-padding: 0px 20px;
-background-color:#24252a;
-display:none;
+.nav__links li ul {
+  position: absolute;
+  padding: 0px 20px;
+  background-color: #24252a;
+  display: none;
 }
+
 .nav__links li:hover ul,
 .nav__links li.over ul {
   padding-top: 15px;
@@ -73,7 +86,7 @@ display:none;
 .nav__links li ul li {
   padding-top: 10px;
   padding-bottom: 10px;
-  
+
   display: block;
   width: 150px;
 }

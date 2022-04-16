@@ -4,4 +4,4 @@ from loja import app, db
 @app.route('/')
 
 def home():
-    return("Hawk Tech 0.3")
+    return render_template("front/index.html")
