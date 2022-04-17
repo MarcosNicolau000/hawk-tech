@@ -109,7 +109,6 @@ header {
   width: 150px;
 }
 
-
 .cta {
   margin-left: 20px;
   padding: 9px 25px;
@@ -124,11 +123,16 @@ header {
   background-color: orange;
 }
 
+.h3{ 
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}
 /* Inicio CSS Ecom */
 
 box-element{
-	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
-	background-color: #fff;
+/* 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff; */
+  padding-top: 100px;
 	border-radius: 4px;
 	padding: 10px;
 }
@@ -155,12 +159,14 @@ box-element{
 }
 
 .form-field{
-	width:250px;
+  height: 10px  ;
+  border-radius: 6px;
 	display: inline-block;
-	padding: 5px;
+	padding: 15px;
 }
 
 .cart-row{
+  
 	display: flex;
     align-items: flex-stretch;
     padding-bottom: 10px;

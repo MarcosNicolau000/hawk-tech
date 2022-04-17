@@ -1,5 +1,119 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-     <h3>checkout</h3>
+
+
+
+<h3 style="font-family: 'Montserrat', sans-serif; margin: 100px 500px; font-size: 5000;">Pagamento</h3>
+<div class="row" style="margin-top: 100px;">
+     <div class="col-lg-6">
+          <div class="box-element" id="form-wrapper">
+               <form id="form">
+                    <div id="user-info">
+                         <div class="form-field">
+                              <input required class="form-control" type="text" name="name" placeholder="Nome">
+                         </div>
+                         <div class="form-field">
+                              <input required class="form-control" type="email" name="email" placeholder="Email">
+                         </div>
+                    </div>
+
+                    <div id="shipping-info">
+                         <hr>
+                         <p>Informações de entrega:</p>
+                         <hr>
+                         <div class="form-field">
+                              <input class="form-control" name="cep" type="text" placeholder="CEP*" maxlength="9" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="estado" type="text" placeholder="Estado*" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="cidade" type="text" placeholder="Cidade*" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="bairro" type="text" placeholder="Bairro*" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="rua" type="text" placeholder="Endereço*" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="" type="text" placeholder="Número*" required>
+                         </div>
+                         <div class="form-field">
+                              <input class="form-control" name="" type="text" placeholder="Complemento">
+                         </div>
+                         <script>
+                              (function () {
+
+                                   const cep = document.querySelector("input[name=cep]");
+
+                                   cep.addEventListener('blur', e => {
+                                        const value = cep.value.replace(/[^0-9]+/, '');
+                                        const url = `https://viacep.com.br/ws/${value}/json/`;
+
+                                        fetch(url)
+                                             .then(response => response.json())
+                                             .then(json => {
+
+                                                  if (json.logradouro) {
+                                                       document.querySelector('input[name=rua]').value = json.logradouro;
+                                                       document.querySelector('input[name=bairro]').value = json.bairro;
+                                                       document.querySelector('input[name=cidade]').value = json.localidade;
+                                                       document.querySelector('input[name=estado]').value = json.uf;
+                                                  }
+
+                                             });
+
+
+                                   });
+
+
+
+
+
+
+
+                              })();
+                         </script>
+                    </div>
+
+                    <hr>
+                    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+               </form>
+          </div>
+
+          <br>
+          <div class="box-element hidden" id="payment-info">
+               <small>Paypal Options</small>
+          </div>
+
+     </div>
+
+     <div class="col-lg-6">
+          <div class="box-element">
+               <a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Voltar ao carrinho</a>
+               <hr>
+               <h3>Resumo do pedido</h3>
+               <hr>
+               <div class="cart-row">
+                    <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
+                    <div style="flex:2">
+                         <p>Product 1</p>
+                    </div>
+                    <div style="flex:1">
+                         <p>R$20.00</p>
+                    </div>
+                    <div style="flex:1">
+                         <p>x2</p>
+                    </div>
+               </div>
+               <h5>Itens: 2</h5>
+               <h5>Total: $4</h5>
+          </div>
+     </div>
+</div>
+
+
+
 {% endblock content %}
