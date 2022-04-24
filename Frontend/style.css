@@ -51,7 +51,14 @@ header {
   text-decoration: none;
 }
 
+.nav__links ul li{
 
+  width: 200px;
+  height: 40px;
+  display: inline-block;
+  text-align: left;
+  line-height: 40px;
+}
 
 .nav__links li {
   padding: 0px 20px;
@@ -66,30 +73,6 @@ header {
   color: orange;
 }
 
-.nav__links li ul {
-  position: absolute;
-  padding: 0px 20px;
-  background-color: #24252a;
-  display: none;
-}
-
-.nav__links li:hover ul,
-.nav__links li.over ul {
-  padding-top: 15px;
-  padding-bottom: 10px;
-
-  border-radius: 6px;
-  display: block;
-  margin-left: -40px;
-}
-
-.nav__links li ul li {
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  display: block;
-  width: 150px;
-}
 
 
 .cta {
